@@ -1,3 +1,3 @@
 public class Avioneta{
-    private  int NoSerie; 
+    private int NoSerie; 
 }

@@ -1,3 +1,3 @@
-public class Avion{
-    private String modelo;
+public class Avion extends MedioTransporteAereo{
+    private motor elmotor;
 }
