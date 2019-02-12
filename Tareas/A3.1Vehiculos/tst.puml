@@ -1,0 +1,84 @@
+@startuml
+class Auto{
+    -String nameManufaturer;
+    -String nameModel;
+    -int yearModel;
+    -String color;
+    -int km;
+    -int noPassanger;
+    -double price;
+    -int numDoors;
+}
+
+class Puertas{
+}
+
+class Transmision{
+    -String typeTransmision;
+}
+
+class Ventanas{
+    -String typeWindow;
+    +addWindow();
+}
+class Llantas{
+    -double diameter;
+}
+
+class Motor{
+    -String typeGas;
+    -double potencia;
+    +startEngine();
+    +stopEngine();
+}
+class Concesionaria{
+    -String nameConcesionaria;
+    -Mecanico[] listMecanics;
+    -Vendedor[] listVendedor;
+    -Auto[] ListVehicles;
+    +fixVehicle(Auto);
+    +sellVehicle(Auto);
+    +acquireVehicle();
+    +scheduleService(Conductor);
+}
+
+class Mecanico{
+    -
+}
+class Vendedor{
+    -
+}
+class Conductor{
+    -
+}
+class Pasajero{
+    -String license;
+}
+class Persona{
+    -String name;
+    -int age;
+    +getName();
+}
+Auto <--* Ventanas
+Auto <--* Motor
+Auto <--* Puertas
+Auto <--* Llantas
+Auto <--* Transmision
+
+Persona <|-- Pasajero
+Persona <|-- Mecanico
+Persona <|-- Vendedor
+Persona <|-- Conductor
+
+Concesionaria <--o Mecanico
+Concesionaria <--o Vendedor
+Concesionaria <--o Auto
+Auto <--o Conductor
+
+Transmision--Motor
+Conductor--Pasajero
+Auto--Pasajero
+Concesionaria--Conductor
+
+
+@enduml

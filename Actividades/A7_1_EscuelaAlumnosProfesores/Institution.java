@@ -46,7 +46,7 @@ public void enrollStudents(Student theStudent){
     }else{
         System.out.println("ya no hay espacio");
     }
-}//end hiresTeacher
+}//end enrollStudents
 
 public int getNumTeachers(){
     return contTeachers-1;

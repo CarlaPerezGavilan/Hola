@@ -5,5 +5,4 @@ class Date{
 class Job{
 
 }
-Job o--Date;
 @enduml
