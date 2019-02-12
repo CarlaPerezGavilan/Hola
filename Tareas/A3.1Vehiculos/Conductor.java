@@ -25,4 +25,8 @@ public class Conductor extends Persona{
         System.out.println(name+" dropped off "+thePassenger.getName());
         thePassanger.getoutCar();
     }
+    public void drive(Auto theCar){
+        System.out.println(name+" driving  "+theCar.getModel());
+        theCar.drive();
+    }
 }    

@@ -43,13 +43,15 @@ class Concesionaria{
 }
 
 class Mecanico{
-    -
+    +repair();
+    +giveService();
 }
 class Vendedor{
-    -
+    +Sell();
 }
 class Conductor{
-    -
+    -Drive();
+    -buyCar();
 }
 class Pasajero{
     -String license;
@@ -59,26 +61,24 @@ class Persona{
     -int age;
     +getName();
 }
-Auto <--* Ventanas
-Auto <--* Motor
-Auto <--* Puertas
-Auto <--* Llantas
-Auto <--* Transmision
+Auto <--* Ventanas: son parte
+Auto <--* Motor: compone
+Auto <--* Puertas: compone
+Auto <--* Llantas: compone
+Auto <--* Transmision:compone
 
-Persona <|-- Pasajero
-Persona <|-- Mecanico
-Persona <|-- Vendedor
-Persona <|-- Conductor
+Persona <|-- Pasajero: hereda
+Persona <|-- Mecanico: hereda
+Persona <|-- Vendedor: hereda
+Persona <|-- Conductor: hereda
 
-Concesionaria <--o Mecanico
-Concesionaria <--o Vendedor
-Concesionaria <--o Auto
-Auto <--o Conductor
+Concesionaria <--o Mecanico: agrega
+Concesionaria <--o Vendedor: agrega
+Concesionaria <--o Auto: agrega
+Auto <--o Conductor: agrega
 
-Transmision--Motor
-Conductor--Pasajero
-Auto--Pasajero
-Concesionaria--Conductor
-
-
+Transmision--Motor: asosciado
+Conductor--Pasajero: asociado
+Auto--Pasajero: asociado
+Concesionaria--Conductor: asociado
 @enduml

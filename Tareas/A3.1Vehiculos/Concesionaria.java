@@ -49,9 +49,12 @@ public class Concesionaria{
           System.out.println("Agendado servicio para"+c.getName());
         
     }
+    public void reppairCar(Auto theCar, Mecanico theMecanic){
+          System.out.println("Reparación de coche"+theCar.getConductor());
+        theMecanic.repair();
+    }
     public void reppairCar(Auto theCar){
           System.out.println("Reparación de coche"+theCar.getConductor());
-        
     }
 
 }
