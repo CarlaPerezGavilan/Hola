@@ -1,4 +1,4 @@
-import java.util.Date;
+import java.util.*;
 
 public class Concesionaria{
 
@@ -6,28 +6,21 @@ public class Concesionaria{
     private Vendedor[] listSeller;
     private int contSeller;
     private int contMecanics;
-    private Date dateService;
+    private String date; 
     private String name; 
 
     public Concesionaria(String name){
         this.name=name;
         contMecanics=0;
         contSeller=0;
-        listMecanics[]= new Mecanico[100];
-        listSeller[]= new Vendedor[100];
+        listMecanics= new Mecanico[100];
+        listSeller= new Vendedor[100];
     }
-    public Concesionaria(){
-        this.name=name;
-        contMecanics=0;
-        contSeller=0;
-        listMecanics[]= new Mecanico[100];
-        listSeller[]= new Vendedor[100];
-
+    private Concesionaria(){
     }
-
     public void hiresMecanic(Mecanico theMecanic){
         if(contMecanics<20){
-            listMecanic[contMecanics]=theMecanic;
+            listMecanics[contMecanics]=theMecanic;
             System.out.println("Hired "+theMecanic.getName());
         }else{
             System.out.println("FULL: Not hiring mecanics");
@@ -41,19 +34,18 @@ public class Concesionaria{
             System.out.println("FULL: Not hiring sellers");
         }
     }
-
-    public void getConcesionaria(){
+    public String getConcesionaria(){
         return name;
     }
-    public void scheduleService(Conductor c){
-          System.out.println("Agendado servicio para"+c.getName());
-        
+    public void scheduleServicio(Conductor c, int dia, int mes, int ano){
+        date= dia+"-"+mes+"-"+ano;
+          System.out.println("Agendado servicio para"+c.getName()+" para  "+date); 
     }
-    public void reppairCar(Auto theCar, Mecanico theMecanic){
+    public void repararCar(Auto theCar, Mecanico theMecanic){
           System.out.println("Reparación de coche"+theCar.getConductor());
-        theMecanic.repair();
+        theMecanic.repair(theCar);
     }
-    public void reppairCar(Auto theCar){
+    public void repararCar(Auto theCar){
           System.out.println("Reparación de coche"+theCar.getConductor());
     }
 

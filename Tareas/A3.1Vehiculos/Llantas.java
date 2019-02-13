@@ -1,5 +1,11 @@
 public class Llantas{
-    public void changeTire(Auto myCar){
-        System.out.println("New tire in "+myCar.getConductor());
+    private double diameter;
+    public Llantas(){
+    }
+    public Llantas(double diameter){
+        this.diameter=diameter;
+    }
+    public void addTire(Auto theCar){
+        System.out.println("TIRE was changed");
     }
 }

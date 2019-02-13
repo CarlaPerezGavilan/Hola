@@ -13,14 +13,13 @@ public class Pasajero extends Persona{
         this.destination=destination;
         this.pickup=pickup; 
     }
-
     public void getinCar(Auto theCar){
-        theCar.pickupPassenger(this, pickup);
-         System.out.println("PASAJERO: picked up "+name+"at"+pickup);
+        theCar.pickupPasajero(this, pickup);
+         System.out.println("PASAJERO: picked up "+getName()+"at"+pickup);
     }
     public void getoutCar(Auto theCar){
         theCar.dropPassenger(this, destination);
-        System.out.println("PASAJERO: dropped of "+name+"at"+destination);
+        System.out.println("PASAJERO: dropped of "+getName()+"at"+destination);
 
     }
 }

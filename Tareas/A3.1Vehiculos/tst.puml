@@ -1,66 +1,108 @@
 @startuml
 class Auto{
-    -String nameManufaturer;
-    -String nameModel;
-    -int yearModel;
-    -String color;
-    -int km;
-    -int noPassanger;
-    -double price;
-    -int numDoors;
-}
-
-class Puertas{
+    -String nameFact
+    -int yearMod
+    -String color
+    -int numDoors
+    -double price
+    -double km
+    -Llantas theWheel
+    -Ventanas[] theWindows
+    -Motor theEngine
+    -Puertas[] theDoors
+    -Conductor theConductor
+    -int contPassenger
+    +buyCar(Conductor)
+    +getModel()
+    +getYear()
+    +yearMod()
+    + getColor()
+    + getPrice()
+    +getNameFact()
+    + getNumDoors()
+    + getKm()
+    +setConductor(String name)
+    +setModel(String model)
+    +setYear(int yearMod)
+    +setColor(String color)
+    +setPrice(double price)
+    +setNameFact(String nameFact)
+    +setNumDoors(int numDoors)
+    +setKm(double km)
+    +String getConductor()
+    +repair(Mecanico mecanic)
+    +service(Mecanico mecanic)
+    +pickupPasajero(Pasajero newPassanger, String pickup)
+    +dropPassenger(Pasajero newPassanger, String destination)
+    +drive(Conductor theConductor)
+    +print()
+    +getAge(int year)
+    +calculatePrice(int year)
+    +nextService()
+    +changeTire()
 }
 
 class Transmision{
     -String typeTransmision;
+    +changeGear(Motor theMotor)
 }
 
 class Ventanas{
     -String typeWindow;
-    +addWindow();
 }
 class Llantas{
     -double diameter;
+    +addTire()
 }
 
 class Motor{
-    -String typeGas;
-    -double potencia;
-    +startEngine();
-    +stopEngine();
+    -String typeGas
+    -double potencia
+    -int gear
+    +getGear()
+    +setGear(int gear)
+    
 }
 class Concesionaria{
-    -String nameConcesionaria;
-    -Mecanico[] listMecanics;
-    -Vendedor[] listVendedor;
-    -Auto[] ListVehicles;
-    +fixVehicle(Auto);
-    +sellVehicle(Auto);
-    +acquireVehicle();
-    +scheduleService(Conductor);
-}
+    -Mecanico[] listMecanics
+    -Vendedor[] listSeller
+    -int contSeller
+    -int contMecanics
+    -String date 
+    -String name
+    +hiresMecanic(Mecanico theMecanic)
+    +hiresSeller(Vendedor theSeller)
+    +getConcesionaria()
+    +scheduleServicio(Conductor c, int dia, int mes, int ano)
+    +repararCar(Auto theCar, Mecanico theMecanic){
+    +repararCar(Auto theCar)
+    }
 
 class Mecanico{
-    +repair();
-    +giveService();
+    +repair()
+    +service()
 }
 class Vendedor{
-    +Sell();
+    +sellCar(Conductor theConductor, Auto theCar)
 }
 class Conductor{
-    -Drive();
-    -buyCar();
+   +buyCar(Auto myCar)
+   +pickUp(Pasajero p)
+   +droppedOff(Pasajero thePassenger)
+   +drive(Auto theCar)
 }
 class Pasajero{
-    -String license;
+    -String destination
+    -String pickup
+    +getinCar(Auto theCar)
+    +getoutCar(Auto theCar)
 }
 class Persona{
-    -String name;
-    -int age;
-    +getName();
+    -String name 
+    +getName(){
+    +setName(String name)
 }
+
 Auto <--* Ventanas: son parte
 Auto <--* Motor: compone
 Auto <--* Puertas: compone
