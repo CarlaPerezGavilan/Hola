@@ -1,9 +1,9 @@
 public class Test{
     public static void main(String[] args){
-        //Crear conductor
+    //Crear conductor
         Conductor carla = new Conductor("Carla");
         Auto polo = new Auto("Polo", "Gris oscuro", 256900, 2010, 0, "Benito Juárez");
-        //Comprar el coche
+    //Comprar el coche
         carla.buyCar(polo);
         carla.drive(polo);
 
@@ -47,5 +47,7 @@ public class Test{
 
     //REPARA COCHE
     c.repararCar(polo, jorge);
+    Llanta nuevaLlanta = new Llanta(50.5);
+    
     }
 }

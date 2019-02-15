@@ -1,4 +1,4 @@
-@startuml
+import java.util.Arrays;
 public class Institution{
     private String name;
     private Student[]studentsList;
@@ -7,27 +7,25 @@ public class Institution{
     private int contStudents;
 
 //Constructor por default
-public Institution(){
-     this.name="School with no name";
-    contTeaches=0;
-    studentList= new String[100];
-    teacherList= new String[100];
-    contStudents=0
+private Institution(){
 }
 //Constructor con parámetro para incializar variables
 public Institution(String name){
     this.name=name;
     contTeaches=0;
-    contStudents=0
-    studentList= new String[100];
-    teacherList= new String[100];
+    contStudents=0;
+    studentList= new Student[100];
+    teacherList= new Teacher[100];
 }
 //AQUÍ HAY ASOCIACIÓN 
 public void recievesVisit(Visitor visitor){
-    visitor.visit();
+    visitor.visit(this);
 }//end recievesVisit
 
 public void print(){
+    System.out.println("Nombre de la institución:"+name);
+    System.out.println("Estudiantes: "+Arrays.toString(studentsList));
+    System.out.println("Maestros: "+Arrays.toString(teachersList));
     //detalles institución
 }//end Print
 
@@ -51,7 +49,13 @@ public void enrollStudents(Student theStudent){
 public int getNumTeachers(){
     return contTeachers-1;
     }
+    public String getInstName(){
+        return name;
+        }
+public void  printTeachers(){
+    for(int i=0; i<contStudents; i++){
+        System.out.println("teacher"+(i+1)+" "+teachersList[i].getName());
+    }
 }
 
 }//end of Institution
-@enduml
