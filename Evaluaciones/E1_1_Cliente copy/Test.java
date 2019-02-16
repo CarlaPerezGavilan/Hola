@@ -6,7 +6,6 @@ public class Test{
 
         juanito.look(marianita);
         juanito.talk("Marianita, me das un beso");
-        System.out.println(juanito);
         marianita.allowKiss(juanito);
         juanito.kiss(marianita);
         juanito.kiss(lucecita);

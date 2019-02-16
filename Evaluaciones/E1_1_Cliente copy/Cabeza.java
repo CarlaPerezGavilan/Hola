@@ -47,8 +47,7 @@ public class Cabeza{
         myMouth.kissPerson(p);
     }
 
-    public void allowKiss(Persona p){
-        System.out.println(p);
+    public void  allowKiss(Persona p){
         myMouth.allowKiss(p);
     }
     public void inhale(Persona p){

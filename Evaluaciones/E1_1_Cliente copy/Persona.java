@@ -2,6 +2,7 @@ public class Persona{
 
     private Cabeza myHead;
     private String name;
+    private String kiss;
 
     //Constructor default
     public Persona(){
@@ -16,16 +17,23 @@ public class Persona{
     }
     public void setName(String name){
         this.name= name; 
-    }
+    }                   
     public void kiss(Persona p){
-        System.out.print("soy "+name);
-        myHead.kiss(p);
+        System.out.print("soy "+name+" ");
+        if (name.equals(p.kiss)){
+            myHead.kiss(p);
+        }else{
+            System.out.println(p.getName()+" y no se deja besuquear ");
+        }
         System.out.println("");
     }
 
     public void allowKiss(Persona personKiss){
-        System.out.println(myHead);
+        kiss = personKiss.getName();
         myHead.allowKiss(personKiss);
+    }
+    public String getKiss(){
+        return kiss;
     }
     public void inhale(){
         System.out.println("soy "+name);
@@ -49,6 +57,7 @@ public class Persona{
     public void talk(String words){
         System.out.print(name+"");
         myHead.talk(words); 
+        System.out.println("");
     }
     public void listen(String words){
         System.out.print(" soy "+name+" ");

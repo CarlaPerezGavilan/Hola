@@ -2,7 +2,7 @@ public class Boca{
     private int tamano;
     private String color;
     private Labio[] myLips;
-    private Persona kiss;
+    private String kiss; 
 
     public Boca(){
         myLips = new Labio[2];
@@ -19,17 +19,10 @@ public class Boca{
     }
     
     public void kissPerson(Persona p){
-        String nombreA= p.getName();
-        String nombreB= kiss.getName();
-        if (nombreB.equals(nombreA)){
-            System.out.println(" estoy besando a "+p.getName());
-        }else{
-            System.out.println(p.getName()+" no se deja besuquear ");
-        }
-       
+        System.out.println(" y estoy besando a "+p.getName());
     }
     public void allowKiss(Persona p){
-        kiss=p;
+        kiss =p.getName(); 
     }
 
     public void talk(String words){
