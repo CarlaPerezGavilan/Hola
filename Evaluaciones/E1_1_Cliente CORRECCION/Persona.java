@@ -23,7 +23,7 @@ public class Persona{
         if (name.equals(p.kiss)){
             myHead.kiss(p);
         }else{
-            System.out.println(p.getName()+" y no se deja besuquear ");
+            System.out.println(" y "+p.getName()+"  no se deja besuquear ");
         }
         System.out.println("");
     }
@@ -36,21 +36,20 @@ public class Persona{
         return kiss;
     }
     public void inhale(){
-        System.out.println("soy "+name);
         myHead.inhale(this);
         System.out.println("");
     }
     public void exhale(){
-        System.out.println("soy "+name);
         myHead.exhale(this);
+        System.out.println("");
     }
+
     public void look(Persona p){
         System.out.print("soy "+name+" y ");
         myHead.look(p);
         System.out.println("");
     }
     public void blink(){
-        System.out.print("soy "+name);
         myHead.blink(this);
         System.out.println("");
     }
@@ -60,7 +59,7 @@ public class Persona{
         System.out.println("");
     }
     public void listen(String words){
-        System.out.print(" soy "+name+" ");
+        System.out.print(" "+name+" ");
         myHead.listen(words);
         System.out.println("");
     }

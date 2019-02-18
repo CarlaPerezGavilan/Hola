@@ -12,6 +12,6 @@ public class Ojo{
         System.out.println(" estoy viendo a "+p.getName());
     }
     public void blink(Persona p){
-        System.out.println(p.getName()+"parpadeo");
+        System.out.println(p.getName()+"  parpadeo");
     }
 }

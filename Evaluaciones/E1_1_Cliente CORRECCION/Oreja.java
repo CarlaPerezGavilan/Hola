@@ -9,6 +9,6 @@ public class Oreja{
         this.tipoAretes= tipoAretes;
     }
     public void listen(String words){
-        System.out.println(" escucha "+words);
+        System.out.println(" escucha: "+words);
     }
 }
