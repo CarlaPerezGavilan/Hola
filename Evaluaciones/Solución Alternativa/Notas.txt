@@ -1,0 +1,30 @@
+Persona
+
+Al constructor default le agregue un nombre.
+
+El copy paste de "Soy name" no aplicaban para inhale, exhale ni blink. OUTPUT era "Soy Gerry Gerry parpadea."
+
+Había que inicializar el string que guarda quien fue permitido besar.
+
+Si esta mejor que el Allow kiss sea de persona.
+
+
+Cabeza
+
+A boca dentro del constructor le agregue sizeMouth, colorMouth, no estaban siendo usados. 
+
+
+
+GENERAL
+
+Teoricamente tendrias que tener constructores para cualquier caso, no sirve de nada tener  un constructor de labios que recibe parámetros si no los invocas en boca, en cabeza Y en persona.
+
+       
+
+Es buena practica poner setters y getters siempre por si algún día lo requieres.
+
+Lo acomode un poco (espaciar bien los signos de igual, reorganice cosas, etc...)
+
+
+El constructor de persona para que corre el que yo escribo de Paco tiene estos datos:
+(String nombre, int sizeMouth, String colorMouth, String typeEyebrow,  String amountHair, String typeNose,  int sizeNose,  int lengthEar,  String tipoArete,  String colorOjos,   String largoPestañas);

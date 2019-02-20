@@ -10,14 +10,14 @@ public class Test{
         juanito.talk("Marianita, me das un beso");
         marianita.listen("Marianita, me das un beso");
         marianita.allowKiss(juanito);
-        juanito.kiss(marianita);
-        juanito.kiss(lucecita);
+        juanito.kiss(marianita);    
+        mario.kiss(lucecita);
 
         //PRUEBAS DE OTROS MÉTODOS 
         juanito.exhale();
         juanito.inhale();
         marianita.blink();
-        
+
     
     }
 }

@@ -1,0 +1,17 @@
+@startuml
+class Persona{
+    -private Cabeza myHead
+    -private String name 
+    -private String kiss
+    -getName()
+    -setName()            
+    -kiss(Persona p)
+    -allowKiss(Persona personKiss)
+    -getKiss()
+    -inhale()
+    -exhale()
+    -look(Persona p)
+    -blink()
+    -talk(String words)
+}
+@enduml
