@@ -48,7 +48,7 @@ public class Persona{
     public void pKiss(Persona pToKiss){
         System.out.print("Soy " + name + " y ");
 
-        if (name.equals(pToKiss.toKiss))
+        if (ptoKiss.equals(pToKiss.toKiss))
             myHead.hKiss(pToKiss);
         else
             System.out.println(pToKiss.name + " no se deja besuquear.");
