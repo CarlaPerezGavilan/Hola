@@ -1,0 +1,126 @@
+@startuml
+class Auto{
+    -String nameFact
+    -int yearMod
+    -String color
+    -int numDoors
+    -double price
+    -double km
+    -Llantas theWheel
+    -Ventanas[] theWindows
+    -Motor theEngine
+    -Puertas[] theDoors
+    -Conductor theConductor
+    -int contPassenger
+    +buyCar(Conductor)
+    +getModel()
+    +getYear()
+    +yearMod()
+    + getColor()
+    + getPrice()
+    +getNameFact()
+    + getNumDoors()
+    + getKm()
+    +setConductor(String name)
+    +setModel(String model)
+    +setYear(int yearMod)
+    +setColor(String color)
+    +setPrice(double price)
+    +setNameFact(String nameFact)
+    +setNumDoors(int numDoors)
+    +setKm(double km)
+    +String getConductor()
+    +repair(Mecanico mecanic)
+    +service(Mecanico mecanic)
+    +pickupPasajero(Pasajero newPassanger, String pickup)
+    +dropPassenger(Pasajero newPassanger, String destination)
+    +drive(Conductor theConductor)
+    +print()
+    +getAge(int year)
+    +calculatePrice(int year)
+    +nextService()
+    +changeTire()
+}
+
+class Transmision{
+    -String typeTransmision;
+    +changeGear(Motor theMotor)
+}
+
+class Ventanas{
+    -String typeWindow;
+}
+class Llantas{
+    -double diameter;
+    +addTire()
+}
+
+class Motor{
+    -String typeGas
+    -double potencia
+    -int gear
+    +getGear()
+    +setGear(int gear)
+    
+}
+class Concesionaria{
+    -Mecanico[] listMecanics
+    -Vendedor[] listSeller
+    -int contSeller
+    -int contMecanics
+    -String date 
+    -String name
+    +hiresMecanic(Mecanico theMecanic)
+    +hiresSeller(Vendedor theSeller)
+    +getConcesionaria()
+    +scheduleServicio(Conductor c, int dia, int mes, int ano)
+    +repararCar(Auto theCar, Mecanico theMecanic){
+    +repararCar(Auto theCar)
+    }
+
+class Mecanico{
+    +repair()
+    +service()
+}
+class Vendedor{
+    +sellCar(Conductor theConductor, Auto theCar)
+}
+class Conductor{
+   +buyCar(Auto myCar)
+   +pickUp(Pasajero p)
+   +droppedOff(Pasajero thePassenger)
+   +drive(Auto theCar)
+}
+class Pasajero{
+    -String destination
+    -String pickup
+    +getinCar(Auto theCar)
+    +getoutCar(Auto theCar)
+}
+class Persona{
+    -String name 
+    +getName(){
+    +setName(String name)
+}
+
+Auto <--* Ventanas: son parte
+Auto <--* Motor: compone
+Auto <--* Puertas: compone
+Auto <--* Llantas: compone
+Auto <--* Transmision:compone
+
+Persona <|-- Pasajero: hereda
+Persona <|-- Mecanico: hereda
+Persona <|-- Vendedor: hereda
+Persona <|-- Conductor: hereda
+
+Concesionaria <--o Mecanico: agrega
+Concesionaria <--o Vendedor: agrega
+Concesionaria <--o Auto: agrega
+Auto <--o Conductor: agrega
+
+Transmision--Motor: asosciado
+Conductor--Pasajero: asociado
+Auto--Pasajero: asociado
+Concesionaria--Conductor: asociado
+@enduml
