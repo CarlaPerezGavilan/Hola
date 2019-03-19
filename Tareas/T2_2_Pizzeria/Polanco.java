@@ -2,16 +2,16 @@ package Tareas.T2_2_Pizzeria;
 public class Polanco extends Sucursal{
     protected static Polanco instance;
     
-    public static Polanco getInstance(Gerente gerente, Chef chef, Repartidor repartidor, Ayudante ayudante, Cajero cajero){
+    public static Polanco getInstance(){
         if(instance== null){
-            instance= new Polanco(gerente, chef, repartidor, ayudante, cajero);
+            instance= new Polanco();
             name= "Polanco";
             return instance;
         }
         return instance;
     }
-    private Polanco(Gerente gerente, Chef chef, Repartidor repartidor, Ayudante ayudante, Cajero cajero){
-        super(gerente, chef, repartidor, ayudante, cajero);
+    private Polanco(){
+        super();
         typePizza[0]= new Hawaiiana();
         typePizza[1]= new Mexicana();
         int temporal = typePizza[1].countIngredient+super.contIngredients;

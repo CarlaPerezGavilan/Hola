@@ -9,6 +9,7 @@ public class Cajero extends Empleado{
     {
         super(nombre);
     }
+    public Cajero(){}
 
     // ORDENAR PIZZA
     public void getOrder(Pizza p){
