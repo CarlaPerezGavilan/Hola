@@ -1,3 +1,5 @@
+package Actividades.A9_2_DomainServer;
+
 public class Com extends Dominio
 {
     // Atributos

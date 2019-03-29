@@ -1,3 +1,5 @@
+package Actividades.A9_2_DomainServer;
+
 public class Mx extends Dominio
 {
     // Atributos
@@ -6,7 +8,7 @@ public class Mx extends Dominio
     // Constructores
     private Mx()
     {
-        super.sitio[0]=new Tuple<>("www.azul.mx", "45.213.1.0");
+        sitio[0]=new Tuple<>("www.azul.mx", "45.213.1.0");
         super.sitio[1] = new Tuple<>("www.anahuac.mx", "213.112.0.1");
         super.sitio[2] = new Tuple<>("www.itam.mx", "100.52.56.10");
         super.sitio[3] = new Tuple<>("www.up.mx", "108.20.21.0");

@@ -1,3 +1,5 @@
+package Actividades.A9_2_DomainServer;
+
 public class Gob extends Dominio
 {
     // Atributos

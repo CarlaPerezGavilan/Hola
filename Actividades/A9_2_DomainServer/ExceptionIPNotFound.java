@@ -1,3 +1,5 @@
+package Actividades.A9_2_DomainServer;
+
 public class ExceptionIPNotFound extends Exception 
 { 
     public String toString() 

@@ -1,3 +1,5 @@
+package Actividades.A9_2_DomainServer;
+
 import java.util.Scanner;
 
 public class Test
@@ -6,7 +8,7 @@ public class Test
     {
 
         DNS servidor = new DNS();
-        
+
         Scanner leer = new Scanner(System.in);
         System.out.println("Dominio:");
         String dire = leer.nextLine();
