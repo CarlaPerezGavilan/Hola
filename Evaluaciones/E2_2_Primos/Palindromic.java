@@ -35,7 +35,6 @@ public class Palindromic extends Primos{
         for(i=2; i<1000; i++){
                     if(isPrimePalidrome(i)){
                         a++;
-                        System.out.println(a+" palindromo: "+i);
                         temporal=i;
                         if(a==n){
                             break;

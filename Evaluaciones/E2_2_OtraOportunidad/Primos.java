@@ -1,3 +1,4 @@
+package Evaluaciones.E2_2_OtraOportunidad;
 public abstract class  Primos{
     final public boolean isNumberPrime(int n){
         int a;
@@ -25,8 +26,6 @@ public abstract class  Primos{
         }
         return count;
     }
-
     public abstract String nPrime(int n);
-
     public abstract String getType();
 }
