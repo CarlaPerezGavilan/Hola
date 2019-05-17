@@ -245,15 +245,15 @@ public Project()
 
    
      //Importar notas guardadas
-        String[] notesArray = sl.split("<");
-        for (int i = 0; i < notesArray.length; i++) {
-        String[] componentNote = notesArray[i].split("~");
-        Notes tempNote = new Notes(componentNote[0], componentNote[1], componentNote[2]);
-        currentVersion.addNote(tempNote);
-        String[] titleS = new String[1];
-        titleS[0] = componentNote[0];
-        model.insertRow(model.getRowCount(), titleS);
-        }
+        // String[] notesArray = sl.split("<");
+        // for (int i = 0; i < notesArray.length; i++) {
+        // String[] componentNote = notesArray[i].split("~");
+        // Notes tempNote = new Notes(componentNote[0], componentNote[1], componentNote[2]);
+        // currentVersion.addNote(tempNote);
+        // String[] titleS = new String[1];
+        // titleS[0] = componentNote[0];
+        // model.insertRow(model.getRowCount(), titleS);
+        // }
 
         //Customize
         notes.setFont(new Font("Avenir", Font.PLAIN, 12));
