@@ -80,6 +80,7 @@ public Project()
         
         JPanel noteList = new JPanel();
              JPanel searchBar = new JPanel();
+             JPanel  inputSearch = new JPanel();
    
       
 
@@ -155,7 +156,6 @@ public Project()
             commitButton.setOpaque(true);
 
         JButton searchButton = new JButton();
-            searchButton.setBorderPainted(false);
             searchButton.setContentAreaFilled(false);
             searchButton.setFocusPainted(false);
             searchButton.setBackground(white);
@@ -168,13 +168,14 @@ public Project()
        
 
         JButton clearButton = new JButton();
-            clearButton.setBorderPainted(false);
             clearButton.setContentAreaFilled(false);
             clearButton.setFocusPainted(false);
             clearButton.setBackground(white);
 
         JButton saveButton = new JButton("Save");
             saveButton.setFont(new Font("Avenir", Font.PLAIN, 12));
+
+         JButton thanosButton = new JButton();
         
 // Buttons icons
         try {
@@ -186,24 +187,27 @@ public Project()
             Image resizedImage3 = img3.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
             Image img4 = ImageIO.read(getClass().getResource("Images/search.png"));
             Image resizedImage4 = img4.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-            Image img5 = ImageIO.read(getClass().getResource("Images/clear.png"));
-            Image resizedImage5 = img4.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+            Image img5 = ImageIO.read(getClass().getResource("Images/clearsearch.png"));
+            Image resizedImage5 = img5.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
             Image img6 = ImageIO.read(getClass().getResource("Images/export.png"));
             Image resizedImage6 = img6.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
             Image img7 = ImageIO.read(getClass().getResource("Images/open.png"));
             Image resizedImage7 = img7.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
             Image img8 = ImageIO.read(getClass().getResource("Images/save.png"));
             Image resizedImage8 = img8.getScaledInstance(30, 30, Image.SCALE_SMOOTH);            
+            Image img9 = ImageIO.read(getClass().getResource("Images/clear.png"));
+            Image resizedImage9 = img9.getScaledInstance(40, 40, Image.SCALE_SMOOTH);            
            
         //Adding Images
             add.setIcon(new ImageIcon(img));
             delete.setIcon(new ImageIcon(img2));
             edit.setIcon(new ImageIcon(resizedImage3));
             clearButton.setIcon(new ImageIcon(resizedImage4));
-            searchButton.setIcon(new ImageIcon(img5));
+            searchButton.setIcon(new ImageIcon(resizedImage5));
             saveButton.setIcon(new ImageIcon(resizedImage8));
             fileChooseButton.setIcon(new ImageIcon(resizedImage6));
             openButton.setIcon(new ImageIcon(resizedImage7));
+            thanosButton.setIcon(new ImageIcon(img9));
         } catch (Exception e) { }
 
 //JLabels and Customization
@@ -240,15 +244,15 @@ public Project()
     JTable notes = new JTable(model);
 
    
-        //Importar notas guardadas
+     //Importar notas guardadas
         String[] notesArray = sl.split("<");
         for (int i = 0; i < notesArray.length; i++) {
-            String[] componentNote = notesArray[i].split("~");
-            Notes tempNote = new Notes(componentNote[0], componentNote[1], componentNote[2]);
-            currentVersion.addNote(tempNote);
-            String[] titleS = new String[1];
-            titleS[0] = componentNote[0];
-            model.insertRow(model.getRowCount(), titleS);
+        String[] componentNote = notesArray[i].split("~");
+        Notes tempNote = new Notes(componentNote[0], componentNote[1], componentNote[2]);
+        currentVersion.addNote(tempNote);
+        String[] titleS = new String[1];
+        titleS[0] = componentNote[0];
+        model.insertRow(model.getRowCount(), titleS);
         }
 
         //Customize
@@ -379,12 +383,14 @@ public Project()
     searchBar.setBackground(Color.white);
     searchBar.add(searchButton);
     searchBar.add(clearButton);
-    searchBar.add(searchInput);
+    searchBar.add(thanosButton);
+    inputSearch.add(searchInput);
 
     //Layout and Adding Elements
     noteList.setLayout(new BoxLayout(noteList, BoxLayout.Y_AXIS));
 
     noteList.add(searchBar);
+    noteList.add(searchInput);
     noteList.add(scroll2);
   
     all.add(noteList);
@@ -604,6 +610,21 @@ searchButton.addActionListener(new ActionListener()
 
     }
 
+});
+
+//THANOS
+thanosButton.addActionListener(new ActionListener() 
+{
+    @Override
+    public void actionPerformed(ActionEvent e) 
+    {
+
+        model.setRowCount(0);        
+         for (int i = 0; i < currentVersion.notes.length; i++) 
+        {
+                currentVersion.notes[i] = null;
+        }
+    }
 });
 
 //CLEAR: clears the search requirements
