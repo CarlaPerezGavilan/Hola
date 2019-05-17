@@ -3,14 +3,11 @@ import java.time.format.DateTimeFormatter;
 public class Notes 
 {
     
-
     public LocalDate dateInitialized;
     public String author;
     public String message;
     public String title;
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-
-
 
     public Notes(String author, String message, String title)
     {
@@ -26,12 +23,10 @@ public class Notes
         System.out.println(message);
         System.out.println(title);
         System.out.println(dateInitialized.format(dtf));
-
-
     }
-    public String getDate(){
+
+    public String getDate()
+    {
         return dateInitialized.format(dtf);
     }
-
-    
 }

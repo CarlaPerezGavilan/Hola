@@ -33,8 +33,8 @@ public class Version {
         for (int i = 0; i < countNote; i++) {
             if (notes[i].title.contains(input)) {
                 results[count++] = notes[i];
-            }
-            if (notes[i].author.contains(input)) {
+
+            } else if (notes[i].author.contains(input)) {
                 results[count++] = notes[i];
             }
         }
@@ -69,9 +69,13 @@ public class Version {
     }
 
     public void deleteNote(int i) {
-        int a;
-        for (a = i; a < countNote; a++) {
+        for (int a = i; a < countNote; a++) {
             notes[a] = notes[a + 1];
+            noteNames[a] = noteNames[a+1];
+        }
+         if(i == countNote){
+            notes[i] = null;
+            noteNames[i] = null;
         }
         countNote = countNote - 1;
     }

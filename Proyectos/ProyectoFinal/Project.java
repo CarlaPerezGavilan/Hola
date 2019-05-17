@@ -329,21 +329,41 @@ public Project(){
         });
 
 
-         commitButton.addActionListener(new ActionListener() {
+    clearButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                notes.clearSelection();
-                String nameCommit = messageCommit.getText();
-                commited.commit(currentVersion, nameCommit);
+                model.setRowCount(0); 
+        for (int i = 0; i < currentVersion.notes.length; i++) 
+        {
+                String[] temparray = new String[1];
+                temparray[0] = currentVersion.notes[i].title;
+                model.addRow(temparray);
+        }
 
-                String[] temparray= new String[1];
-                temparray[0] = commited.nameVersion[count++];
-                modelVersion.addRow(temparray);
-                messageCommit.setText("");
-
-                
             }
+
+        });
+
+searchButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                model.setRowCount(0); 
+                 
+           String inputS = searchInput.getText();
+             Notes[] notasInput = new Notes[100];
+            notasInput = currentVersion.Search(inputS);
+
+        for (int i = 0; i < notasInput.length-1; i++) {
+              String[] temparray = new String[1];
+                temparray[0] = notasInput[i].title;
+              System.out.println(temparray[0]);
+                model.addRow(temparray);
+        }
+
+         }
 
         });
 
